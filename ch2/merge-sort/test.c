@@ -21,7 +21,7 @@ int main()
     printf("\n");
 
     //merge_sort(testcase, sizeof(testcase)/sizeof(testcase[0]));
-    do_merge_sort(testcase, 0, 99);
+    merge_sort(testcase, 100);
 
     for(i = 0; i< sizeof(testcase)/sizeof(testcase[0]); i++)
     {
