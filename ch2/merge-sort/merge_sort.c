@@ -18,17 +18,6 @@ void merge(int a[], int start, int middle, int end)
     {
         right[i] = a[middle+1+i];
     }
-    for(i = 0; i< n1 ; i++)
-    {
-        printf("%d ", left[i]);
-    }
-    printf("\n");
-    for(i=0;i<n2;i++)
-    {
-        printf("%d ", right[i]);
-    }
-    printf("\n");
-   
     for(i = start, j = 0, k = 0; j < n1 && k < n2; i++)
     {
         if(left[j] >= right[k])
@@ -57,19 +46,8 @@ void merge(int a[], int start, int middle, int end)
             a[i] = left[j];
         }
     }
-    //}
     free(left);
     free(right);
-    int z = 0;
-    printf("======================\n");
-    printf("hahahahah\n");
-    for(z=start;z<=end;z++)
-    {
-        printf("%d ", a[z]);
-    }
-    printf("\n");
-    printf("======================\n");
-    
 }
 
 void do_merge_sort(int a[], int left, int right)
