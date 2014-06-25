@@ -59,7 +59,6 @@ void do_merge_sort(int a[], int left, int right)
         do_merge_sort(a, middle+1,right);
         merge(a, left, middle, right);
     }
- 
 }
 
 void merge_sort(int a[], int len)
