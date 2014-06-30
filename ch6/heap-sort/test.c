@@ -20,7 +20,7 @@ int main()
     }
     printf("\n");
 
-    insertion_sort(testcase, sizeof(testcase)/sizeof(testcase[0]));
+    heap_sort(testcase, sizeof(testcase)/sizeof(testcase[0]));
 
     for(i = 0; i< sizeof(testcase)/sizeof(testcase[0]); i++)
     {
