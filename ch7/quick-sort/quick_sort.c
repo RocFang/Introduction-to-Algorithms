@@ -28,14 +28,8 @@ int do_quick_sort(int a[], int left, int right)
     if(right > left)
     {
         middle = middlelize(a, left, right);
-	if(middle > left)
-        {
-            do_quick_sort(a, left, middle);
-        }
-        if(middle < right)
-        {
-            do_quick_sort(a, middle+1, right);
-        }
+        do_quick_sort(a, left, middle);
+        do_quick_sort(a, middle+1, right);
     }
 }
 
