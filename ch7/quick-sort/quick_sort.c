@@ -2,6 +2,7 @@ int get_pivot(int arr[], int left, int right)
 {
     return arr[(left + right)/2 ];
 }
+
 int partition(int arr[], int left, int right)
 {
       int i = left, j = right;
