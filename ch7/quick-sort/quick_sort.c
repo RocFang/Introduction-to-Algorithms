@@ -1,39 +1,39 @@
-int middlelize(int a[], int left, int right)
+int get_pivot(int arr[], int left, int right)
 {
-    int flag = a[left];
-    int flag_pos = left;
-    int i;
-    for(i=left+1; i <= right; i++)
-    {
-        if(a[i] < flag)
-        {
-            int temp = a[i];
-            int j = i;
-            while(j > flag_pos)
-            {
-                a[j] = a[j-1];
-                j--;
+    return arr[(left + right)/2 ];
+}
+int partition(int arr[], int left, int right)
+{
+      int i = left, j = right;
+      int tmp;
+      int pivot = get_pivot(arr, left, right);
+     
+      while (i <= j) {
+            while (arr[i] < pivot)
+                  i++;
+            while (arr[j] > pivot)
+                  j--;
+            if (i <= j) {
+                  tmp = arr[i];
+                  arr[i] = arr[j];
+                  arr[j] = tmp;
+                  i++;
+                  j--;
             }
-            a[flag_pos] = temp;
-            flag_pos++;
-
-        }
-    }
-    return flag_pos;
+      };
+     
+      return i;
+}
+ 
+void do_quick_sort(int arr[], int left, int right) {
+      int index = partition(arr, left, right);
+      if (left < index - 1)
+            do_quick_sort(arr, left, index - 1);
+      if (index < right)
+            do_quick_sort(arr, index, right);
 }
 
-int do_quick_sort(int a[], int left, int right)
+void quick_sort(int arr[], int len)
 {
-    int middle;
-    if(right > left)
-    {
-        middle = middlelize(a, left, right);
-        do_quick_sort(a, left, middle);
-        do_quick_sort(a, middle+1, right);
-    }
-}
-
-int quick_sort(int a[], int len)
-{
-    do_quick_sort(a, 0, len-1);
+    do_quick_sort(arr, 0, len-1);
 }
